@@ -1,0 +1,58 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #eeeeee;
+    font-family: sans-serif;
+  }
+  
+  /* Canvas principal Matter.js */
+  #gameContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Assure que le jeu est derrière */
+  }
+  
+  /* Canvas overlay pour la prévisualisation */
+  #overlayCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* pour que la souris ne clique pas sur le canvas */
+    z-index:2;
+  }
+  
+  /* UI des boutons */
+  #uiContainer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* Met l’UI au-dessus du canvas */
+  }
+  
+  .object-btn {
+    border: none;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s;
+  }
+  
+  .object-btn:hover {
+    transform: scale(1.05);
+    background: #f0f0f0;
+  }
+  
+  /* Bouton sélectionné (on la mettra via JS) */
+  .object-btn.selected {
+    background: #ffeb3b;
+    font-weight: bold;
+  }
+  
